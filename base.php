@@ -2,7 +2,7 @@
 date_default_timezone_set("Asia/Taipei");
 session_start();
 
-class db{
+class DB{
     //設定屬性
     private $pdo;
     private $table="";
@@ -24,7 +24,7 @@ class db{
                 $tmp[]=sprintf("`%s`='%s'",$key,$value);
             }
             $sql.=" WHERE ".implode(" && ",$tmp);
-        }else $sql.=$arg[0];
+        }
         if(isset($arg[1])) $sql.=$arg[1];
         return $this->pdo->query($sql)->fetchAll();
     }
@@ -69,7 +69,7 @@ class db{
             }
             //新增
         }else $sql="INSERT INTO $this->table (`".implode("`,`",array_keys($arg))."`) VALUES ('".implode("','",$arg)."')";
-        echo $sql;
+        // echo $sql;
         return $this->pdo->exec($sql);
     }
 
