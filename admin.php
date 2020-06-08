@@ -90,8 +90,8 @@
 					</tbody>
 				</table>
 				<?php
-				$do = (!empty($_GET['do'])) ? $_GET['do'] : 'title';
-				// $do=$_GET['do']??'title';
+				// $do = (!empty($_GET['do'])) ? $_GET['do'] : 'title';
+				$do=$_GET['do']??'title';
 				$file = 'backend/' . $do . ".php";
 				if (file_exists($file)) {
 					include $file;

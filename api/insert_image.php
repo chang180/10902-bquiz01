@@ -1,7 +1,7 @@
 <?php
 include_once "../base.php";
 
-$table=$_POST(['table']);
+$table=$_POST['table'];
 $db=new DB($table);
 
 if(!empty($_FILES['img']['tmp_name'])){

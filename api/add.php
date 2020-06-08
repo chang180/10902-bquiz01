@@ -1,5 +1,5 @@
 <?php
-
+// 思考方向可從表單建立的名稱都一樣開始
 // 至此可將insert_XXX檔案全刪了
 include_once "../base.php";
 
