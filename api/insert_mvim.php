@@ -9,9 +9,9 @@ if(!empty($_FILES['img']['tmp_name'])){
     move_uploaded_file($_FILES['img']['tmp_name'],"../img/".$filename);
 }
 
-$text=$_POST['text'];
+$text='';
 
-$sh=0;
+$sh=1;
 
 $db->save(['text'=>$text,'img'=>$filename,'sh'=>$sh]);
 to("../admin.php?do=$table");

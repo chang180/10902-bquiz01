@@ -29,8 +29,12 @@
                     <span class="t botli">主選單區</span>
                 </div>
                 <div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
-                    <span class="t">進站總人數 :
-                        1 </span>
+                    <span class="t">進站總人數 :<?php
+					$total=new DB('total');
+					$tt=$total->find(1);
+					echo $tt['total'];
+					
+					?></span>
                 </div>
             </div>
             <?php 
@@ -89,9 +93,7 @@
             </div>
         </div>
         <div style="clear:both;"></div>
-        <div style="width:1024px; left:0px; position:relative; background:#FC3; margin-top:4px; height:123px; display:block;">
-            <span class="t" style="line-height:123px;"></span>
-        </div>
+        <?php include "footer.php";?>
     </div>
 
 </body>
