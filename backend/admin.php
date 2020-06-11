@@ -1,26 +1,26 @@
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-	<p class="t cent botli">動態文字廣告管理</p>
+	<p class="t cent botli">管理者帳號管理</p>
 	<form method="post" action="api/edit.php">
 		<table width="100%">
 			<tbody>
 				<tr class="yel">
-					<td width="80%">動態文字廣告</td>
-					<td width="10%">顯示</td>
+					<td width="40%">帳號</td>
+					<td width="40%">密碼</td>
 					<td width="10%">刪除</td>
 				</tr>
 				<!-- 叫出所有資料 -->
 				<?php
 				$table=$do;
+				// echo $table;
 				$db = new DB($table);
 				$all = $db->all();
 				foreach ($all as $row) {
-					$isChk = ($row['sh'] == 1) ? 'checked' : '';
 				?>
 
-					<tr>
-						<td width="80%"><input type="text" name="text[]" value="<?= $row['text']; ?>"></td>
-						<td width="10%"><input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?=$isChk;?>></td>
-						<td width="10%"><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
+					<tr class='cent'>
+						<td><input type="text" name="acc[]" value="<?= $row['acc']; ?>"></td>
+						<td><input type="password" name="pw[]" value="<?= $row['pw']; ?>"></td>	
+						<td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
 						<input type="hidden" name="id[]" value="<?=$row['id'];?>">
 					</tr>
 				<?php
@@ -34,7 +34,7 @@
 			<tbody>
 				<tr>
 				<input type="hidden" name="table" value='<?=$table;?>'>
-					<td width="200px"><input type="button" onclick="op('#cover','#cvr','modal/ad.php?table=<?=$table;?>')" value="新增動態文字廣告"></td>
+					<td width="200px"><input type="button" onclick="op('#cover','#cvr','modal/admin.php?table=<?=$table;?>')" value="新增管理者帳號"></td>
 					<td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
 				</tr>
 			</tbody>
