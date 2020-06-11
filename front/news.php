@@ -28,7 +28,7 @@
 					}
 					?>
 				</ol>
-				<div style="text-align:center;">
+				<div style="text-align:center;position:absolute;bottom:20px;left:50%;transform: translateX(-50%);">
 					<?php
 					if (($now - 1) > 0) {
 
