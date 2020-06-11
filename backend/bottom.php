@@ -10,7 +10,6 @@
 					?>
 					<td width="50%"><input type="text" name="bot" value="<?= $tt['bottom']; ?>"></td>
 				</tr>
-
 			</tbody>
 
 		</table>
