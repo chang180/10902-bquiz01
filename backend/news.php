@@ -36,12 +36,23 @@
 					<input type="hidden" name="id[]" value="<?= $row['id']; ?>">
 				</tr>
 			<?php
-					}
+					} 
 			?>
 			</tr>
 			</tbody>
 
 		</table>
+		<table >
+	<tbody style="margin-top:40px; width:70%;">
+		<tr>
+			<input type="hidden" name="table" value="news">
+			<td width="200px"><input type="button" onclick="op('#cover','#cvr','modal/news.php')" value="新增最新消息"></td>
+			<td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
+		</tr>
+	</tbody>
+</table>
+
+</form>
 
 		<div style="text-align:center;position:absolute;bottom:20px;left:50%;transform: translateX(-50%);">
 			<?php
@@ -89,15 +100,5 @@
 
 
 
-<table style="margin-top:40px; width:70%;">
-	<tbody>
-		<tr>
-			<input type="hidden" name="table" value="news">
-			<td width="200px"><input type="button" onclick="op('#cover','#cvr','modal/news.php')" value="新增最新消息"></td>
-			<td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
-		</tr>
-	</tbody>
-</table>
 
-</form>
 </div>
