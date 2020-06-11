@@ -13,12 +13,12 @@
 
 				$table = $do;
 				$db = new DB("$table");
-				$total = $db->count(['sh' => 1]);
+				$total = $db->count('');
 				$num = 4;
 				$pages = ceil($total / $num);
 				$now = (!empty($_GET['p'])) ? $_GET['p'] : 1;
 				$start = ($now - 1) * $num;
-				$ns = $db->all(['sh' => 1], " limit $start,$num");
+				$ns = $db->all('', " limit $start,$num");
 
 				?>
 

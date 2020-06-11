@@ -14,12 +14,12 @@
 
 				$table = $do;
 				$db = new DB("$table");
-				$total = $db->count(['sh' => 1]);
+				$total = $db->count('');
 				$num = 3;
 				$pages = ceil($total / $num);
 				$now = (!empty($_GET['p'])) ? $_GET['p'] : 1;
 				$start = ($now - 1) * $num;
-				$ns = $db->all(['sh' => 1], " limit $start,$num");
+				$ns = $db->all('', " limit $start,$num");
 
 				?>
 
@@ -46,7 +46,7 @@
 		<table style="margin-top:40px; width:70%;">
 	<tbody>
 		<tr>
-			<input type="hidden" name="table" value="mvim">
+			<input type="hidden" name="table" value="image">
 			<td width="200px"><input type="button" onclick="op('#cover','#cvr','modal/image.php?do=image')" value="新增校園映像圖片"></td>
 			<td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
 		</tr>
