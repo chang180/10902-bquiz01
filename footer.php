@@ -3,7 +3,7 @@
 			<?php
 					$total=new DB('bottom');
 					$tt=$total->find(1);
-					echo $tt['bot'];
+					echo $tt['bottom'];
 					
 					?></span>
 		</div>

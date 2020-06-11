@@ -62,9 +62,9 @@ class DB{
             //更新
             foreach($arg as $key=>$value){
                 //可以不執行id的判斷
-                if($key!='id'){
+                // if($key!='id'){
                     $tmp[]=sprintf("`%s`='%s'",$key,$value);
-                }
+                // }
                 $sql="UPDATE $this->table SET ".implode(",",$tmp)." WHERE `id`='".$arg['id']."'";
             }
             //新增

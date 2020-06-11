@@ -8,7 +8,7 @@
 					<?php $total = new DB('bottom');
 					$tt = $total->find(1);
 					?>
-					<td width="50%"><input type="text" name="bot" value="<?= $tt['bot']; ?>"></td>
+					<td width="50%"><input type="text" name="bot" value="<?= $tt['bottom']; ?>"></td>
 				</tr>
 
 			</tbody>
