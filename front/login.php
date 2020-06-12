@@ -4,12 +4,12 @@ if (!empty($_POST['acc']) && !empty($_POST['pw'])) {
 	$acc = $_POST['acc'];
 	$pw = $_POST['pw'];
 	$chk = $admin->count(['acc' => $acc, 'pw' => $pw]);
+	// echo $chk;
 
-	if ($chk > 0){
+	if ($chk > 0) {
 		to("admin.php");
-$_SESSION['login']=$acc;
-	} 
-	else echo "<script>alert ('帳號或密碼錯誤');</script>";
+		$_SESSION['login'] = $acc;
+	} else echo "<script>alert ('帳號或密碼錯誤');</script>";
 }
 
 
