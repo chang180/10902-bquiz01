@@ -96,7 +96,7 @@
             <script>
                 $(".sswww").hover(
                     function() {
-                        $("#alt").html("" + $(this).children(".all").html() + "").css({
+                        $("#alt").html("<pre>" + $(this).children(".all").html() + "</pre>").css({
                             "top": $(this).offset().top - 50
                         })
                         $("#alt").show()
@@ -110,7 +110,18 @@
             </script>
             <div class="di di ad" style="height:540px; width:23%; padding:0px; margin-left:22px; float:left; ">
                 <!--右邊-->
-                <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;" onclick="lo('?do=admin')">管理登入</button>
+                <?php
+    if(empty($_SESSION['login'])){
+                ?>
+                <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;" onclick="lo('?do=login')">管理登入</button>
+                <?php 
+                }else{
+                    ?>
+                
+                <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;" onclick="lo('admin.php')">返回管理</button>
+                <?php
+                }
+                ?>
                 <div style="width:89%; height:480px;" class="dbor">
                     <span class="t botli">校園映象區</span>
                     <div style="text-align:center;margin:10px" onclick="pp(1)"><img src="icon/up.jpg" alt=""></div>

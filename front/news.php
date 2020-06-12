@@ -20,7 +20,7 @@
 
 					foreach ($ns as $n) {
 					?>
-						<li><?= mb_substr($n['text'], 0, 20, 'utf8') ?>...
+						<li class="sswww"><?= mb_substr($n['text'], 0, 20, 'utf8') ?>...
 							<div class="all" style="display:none"><?= $n['text']; ?></div>
 						</li>
 
@@ -59,7 +59,7 @@
 			<script>
 				$(".sswww").hover(
 					function() {
-						$("#alt").html("" + $(this).children(".all").html() + "").css({
+						$("#alt").html("<pre>" + $(this).children(".all").html() + "</pre>").css({
 							"top": $(this).offset().top - 50
 						})
 						$("#alt").show()
