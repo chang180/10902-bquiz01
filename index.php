@@ -9,7 +9,7 @@
 
     <title>卓越科技大學校園資訊系統</title>
     <link href="./css/css.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="./css/bootstrap.min.css"> -->
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/js.js"></script>
 </head>
@@ -29,25 +29,25 @@
                     <!--主選單放此-->
                     <span class="t botli">主選單區</span>
                     <?php
-                    $menu = new DB("menu");
-                    $mains = $menu->all(['parent' => 0, 'sh' => 1]);
-                    foreach ($mains as $main) {
-                        echo "<div class ='mainmu'>";
-                        echo "<a href='" . $main['href'] . "'>";
-                        echo $main['name'];
-                        echo "</a>";
+                    // $menu = new DB("menu");
+                    // $mains = $menu->all(['parent' => 0, 'sh' => 1]);
+                    // foreach ($mains as $main) {
+                    //     echo "<div class ='mainmu'>";
+                    //     echo "<a href='" . $main['href'] . "'>";
+                    //     echo $main['name'];
+                    //     echo "</a>";
 
-                        $chksub = $menu->count(['parent' => $main['id']]);
-                        if ($chksub > 0) {
-                            $subs = $menu->all(['parent' => $main['id']]);
-                            echo "<div class='mw'>";
-                            foreach ($subs as $sub) {
-                                echo "<div class='mainmu2'><a href='" . $sub['href'] . "'>" . $sub['name'] . "</a></div>";
-                            }
-                            echo "</div>";
-                        }
-                        echo "</div>";
-                    }
+                    //     $chksub = $menu->count(['parent' => $main['id']]);
+                    //     if ($chksub > 0) {
+                    //         $subs = $menu->all(['parent' => $main['id']]);
+                    //         echo "<div class='mw'>";
+                    //         foreach ($subs as $sub) {
+                    //             echo "<div class='mainmu2'><a href='" . $sub['href'] . "'>" . $sub['name'] . "</a></div>";
+                    //         }
+                    //         echo "</div>";
+                    //     }
+                    //     echo "</div>";
+                    // }
 
                     ?>
                     <?php
@@ -91,7 +91,7 @@
             if (file_exists($file)) {
                 include $file;
             } else {
-                include "front/main.php";
+                include "front/home.php";
             }; ?>
             <div id="alt" style="position: absolute; width: 350px; min-height: 100px; word-break:break-all; text-align:justify;  background-color: rgb(255, 255, 204); top: 50px; left: 400px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;"></div>
             <script>
@@ -131,7 +131,7 @@
                     $imgs = $image->all(['sh' => 1]);
                     foreach ($imgs as $key => $im) {
                         echo "<div style='text-align:center;margin:3px' id='ssaa$key' class='im'>";
-                        echo "<img src='img/" . $im['img'] . "' style='width:150px;height:103px'>";
+                        echo "<img src='img/" . $im['file'] . "' style='width:150px;height:103px'>";
                         echo "</div>";
                     }
 
